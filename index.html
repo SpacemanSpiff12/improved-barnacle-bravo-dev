@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spaceman's Yugioh Probability Calculator - Home</title>
+
+  <!-- External Stylesheets & Libraries -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-warning">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-warning" href="index.html">
+          <i class="bi bi-pie-chart-fill me-2"></i>Yugioh Probability Calculator
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pages/deck-builder.html">Opening Hand Odds Tool</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pages/signin.html">Sign In</a>
+            </li>
+          </ul>
+          
+          <!-- User Controls -->
+          <div class="d-flex align-items-center text-light me-3" id="user-panel">
+            <i class="bi bi-person-circle fs-4 me-2 text-warning"></i>
+            <span class="me-2">SpacemanSpiff12</span>
+            <span class="badge bg-secondary">Duelist</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="container my-4">
+
+    <!-- Hero / Welcome Banner -->
+    <div class="p-4 mb-4 bg-dark text-light rounded-3 border border-secondary">
+      <div class="container-fluid py-2">
+        <h1 class="display-6 fw-bold text-warning">Yu-Gi-Oh! Opening Hand Odds Calculator</h1>
+        <p class="col-md-10 fs-6 text-light">
+         The Heart of the Cards is great for Pharoahs. The rest of us get something cooler... MATH! Calculate the exact probability of drawing your starters, extenders, and hand traps in a 5-card opening hand.
+        </p>
+        <a href="pages/deck-builder.html" class="btn btn-warning btn-md fw-bold">Try the Tool</a>
+      </div>
+    </div>
+
+    <!-- Control Panel / Filters (Hardcoded UI shell) -->
+    <section class="card mb-4 shadow-sm">
+      <div class="card-header bg-secondary text-white fw-bold">
+        <i class="bi bi-funnel me-1"></i> Card Odds Search & Filter
+      </div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-5">
+            <label for="search-box" class="form-label">Search Card</label>
+            <input type="text" id="search-box" class="form-control" placeholder="e.g., Ash Blossom, Nibiru...">
+          </div>
+          <div class="col-md-4">
+            <label for="category-filter" class="form-label">Category</label>
+            <select id="category-filter" class="form-select">
+              <option value="all">All Categories</option>
+              <option value="handtrap">Hand Trap</option>
+              <option value="starter">Starter / Engine</option>
+              <option value="boardwipe">Breaker</option>
+            </select>
+          </div>
+          <div class="col-md-3 d-flex align-items-end">
+            <button id="search-btn" class="btn btn-primary w-100">
+              <i class="bi bi-search me-1"></i> Filter Cards
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content Cards Container -->
+    <section class="mb-4">
+      <h2 class="h4 mb-3 border-bottom pb-2">Common Hand Probabilities (40-Card Deck)</h2>
+      
+      <div class="row row-cols-1 row-cols-md-3 g-4" id="content-container">
+        
+        <!-- Card 1 -->
+        <div class="col">
+          <div class="card h-100 border-primary">
+            <div class="card-header bg-primary text-white d-flex justify-content-between">
+              <span>Hand Trap</span>
+              <span class="badge bg-light text-dark">3 Copies</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Standard 3 of Odds (ex. Ash Blossom & Joyous Spring)</h5>
+              <p class="card-text text-muted">Probability of drawing at least 1 copy in a 5-card opening hand.</p>
+              <div class="bg-light p-2 rounded text-center border">
+                <span class="fs-4 fw-bold text-success">33.76%</span>
+                <span class="d-block text-muted small">1 in ~3 games</span>
+              </div>
+            </div>
+            <div class="card-footer text-muted small">
+              Tags: <span class="badge bg-secondary">Monster</span> <span class="badge bg-secondary">Fire</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col">
+          <div class="card h-100 border-warning">
+            <div class="card-header bg-warning text-dark d-flex justify-content-between fw-bold">
+              <span>Starter</span>
+              <span class="badge bg-dark">3 Copies</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Main Starter (e.g. Snake-Eye Ash)</h5>
+              <p class="card-text text-muted">Odds of seeing your main 1-card combo starter in your opening 5.</p>
+              <div class="bg-light p-2 rounded text-center border">
+                <span class="fs-4 fw-bold text-success">33.76%</span>
+                <span class="d-block text-muted small">3 Copies in 40 Cards</span>
+              </div>
+            </div>
+            <div class="card-footer text-muted small">
+              Tags: <span class="badge bg-secondary">Starter</span> <span class="badge bg-secondary">Combo</span>
+            </div>
+          </div>
+        </div>
+
+    <!-- Bootstrap Toast Notification (Hardcoded Demo) -->
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+      <div id="status-toast" class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header bg-success text-white">
+          <i class="bi bi-check-circle-fill me-2"></i>
+          <strong class="me-auto">YGO Odds System</strong>
+          <small>Just now</small>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          Welcome to dev|bravo shell! Odds database loaded.
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light py-4 border-top border-warning mt-auto">
+    <div class="container text-center">
+      <p class="mb-1">YGO Draw Odds Shell — Created for Coursework Project</p>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="https://github.com/SpacemanSpiff12" target="_blank" class="text-warning text-decoration-none">
+          <i class="bi bi-github me-1"></i>GitHub Profile
+        </a>
+        <span class="text-secondary">|</span>
+        <a href="https://github.com/SpacemanSpiff12/psychic-octo-broccoli-bravo-lab" target="_blank" class="text-warning text-decoration-none">
+          <i class="bi bi-code-slash me-1"></i>Repository Code
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
