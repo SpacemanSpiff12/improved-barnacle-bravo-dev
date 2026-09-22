@@ -1,6 +1,6 @@
 # YGO Draw Odds > Calculate opening hand probabilities for Yu-Gi-Oh! deck building
 
-**Author:** Brandon Andrew Harwell  
+**Author:** Brandon Harwell  
 **Project:** dev|bravo  
 **Version:** 0.2  
 **Date:** 2026-09-22  
