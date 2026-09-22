@@ -49,7 +49,7 @@ Yu-Gi-Oh! deck building heavily relies on ratios to ensure players open combo st
 ## 📁 Project Structure
 
 ```text
-psychic-octo-broccoli-bravo-lab/
+improved-barnacle-bravo-lab/
 ├── index.html
 ├── pages/
 │   ├── deck-builder.html
