@@ -1,0 +1,22 @@
+/* Custom Styles overriding Bootstrap defaults */
+
+body {
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Subtle card hover effect for visual UI feedback */
+.card {
+  transition: transform 0.15s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+/* Custom user panel text sizing */
+#user-panel .badge {
+  font-size: 0.75rem;
+}
