@@ -11,6 +11,12 @@ window.appState = {
   }
 };
 
+// Check sessionStorage for persisted user session on load
+const savedUser = sessionStorage.getItem("ygo_user");
+if (savedUser) {
+  window.appState.currentUser = JSON.parse(savedUser);
+}
+
 // --- Probability Function ---
 // Calculates probability of drawing >= 1 success in 'n' draws given 'N' population, 'K' successes in population.
 function calculateHypergeometric(N, K, n, k = 1) {
