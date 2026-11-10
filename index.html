@@ -64,7 +64,7 @@
       </div>
     </div>
 
-    <!-- Control Panel / Filters (Hardcoded UI shell) -->
+    <!-- Control Panel / Filters -->
     <section class="card mb-4 shadow-sm">
       <div class="card-header bg-secondary text-white fw-bold">
         <i class="bi bi-funnel me-1"></i> Card Odds Search & Filter
@@ -93,55 +93,55 @@
       </div>
     </section>
 
-    <!-- Content Cards Container -->
-    <section class="mb-4">
-      <h2 class="h4 mb-3 border-bottom pb-2">Common Hand Probabilities (40-Card Deck)</h2>
-      
-      <div class="row row-cols-1 row-cols-md-3 g-4" id="content-container">
-        
-        <!-- Card 1 -->
-        <div class="col">
-          <div class="card h-100 border-primary">
-            <div class="card-header bg-primary text-white d-flex justify-content-between">
-              <span>Hand Trap</span>
-              <span class="badge bg-light text-dark">3 Copies</span>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Standard 3 of Odds (ex. Ash Blossom & Joyous Spring)</h5>
-              <p class="card-text text-muted">Probability of drawing at least 1 copy in a 5-card opening hand.</p>
-              <div class="bg-light p-2 rounded text-center border">
-                <span class="fs-4 fw-bold text-success">33.76%</span>
-                <span class="d-block text-muted small">1 in ~3 games</span>
+    <!-- Interactive Calculator & Dynamic Card Database Section -->
+    <section class="row g-4 mb-4">
+      <!-- Dynamic Odds Calculator Card -->
+      <div class="col-lg-5">
+        <div class="card h-100 shadow-sm border-warning">
+          <div class="card-header bg-warning text-dark fw-bold">
+            <i class="bi bi-calculator me-2"></i>Custom Opening Hand Probability Calculator
+          </div>
+          <div class="card-body">
+            <form id="odds-form">
+              <div class="mb-3">
+                <label for="deck-size" class="form-label">Total Deck Size</label>
+                <input type="number" id="deck-size" class="form-control" value="40" min="40" max="60" required>
               </div>
-            </div>
-            <div class="card-footer text-muted small">
-              Tags: <span class="badge bg-secondary">Monster</span> <span class="badge bg-secondary">Fire</span>
+              <div class="mb-3">
+                <label for="card-copies" class="form-label">Copies in Deck (Target Card)</label>
+                <input type="number" id="card-copies" class="form-control" value="3" min="1" max="3" required>
+              </div>
+              <div class="mb-3">
+                <label for="hand-size" class="form-label">Opening Hand Size</label>
+                <input type="number" id="hand-size" class="form-control" value="5" min="1" max="10" required>
+              </div>
+              <button type="submit" class="btn btn-warning w-100 fw-bold">Calculate Probability</button>
+            </form>
+            <div id="calc-result" class="mt-3 p-3 bg-light rounded text-center border d-none">
+              <span class="text-muted small d-block">Probability of Drawing at least 1:</span>
+              <span id="probability-output" class="fs-3 fw-bold text-success">0.00%</span>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Card 2 -->
-        <div class="col">
-          <div class="card h-100 border-warning">
-            <div class="card-header bg-warning text-dark d-flex justify-content-between fw-bold">
-              <span>Starter</span>
-              <span class="badge bg-dark">3 Copies</span>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Main Starter (e.g. Snake-Eye Ash)</h5>
-              <p class="card-text text-muted">Odds of seeing your main 1-card combo starter in your opening 5.</p>
-              <div class="bg-light p-2 rounded text-center border">
-                <span class="fs-4 fw-bold text-success">33.76%</span>
-                <span class="d-block text-muted small">3 Copies in 40 Cards</span>
-              </div>
-            </div>
-            <div class="card-footer text-muted small">
-              Tags: <span class="badge bg-secondary">Starter</span> <span class="badge bg-secondary">Combo</span>
+      <!-- Content Cards Container (Fetched via JSON & CRUD) -->
+      <div class="col-lg-7">
+        <div class="card h-100 shadow-sm">
+          <div class="card-header bg-secondary text-white fw-bold d-flex justify-content-between align-items-center">
+            <span><i class="bi bi-card-checklist me-2"></i>Saved Starter / Hand Trap Database</span>
+            <span class="badge bg-dark" id="record-count">0 records</span>
+          </div>
+          <div class="card-body overflow-auto" style="max-height: 400px;">
+            <div id="content-container" class="row row-cols-1 g-3">
+              <!-- Dynamically populated from JSON / sessionStorage -->
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-    <!-- Bootstrap Toast Notification (Hardcoded Demo) -->
+    <!-- Bootstrap Toast Notification -->
     <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
       <div id="status-toast" class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header bg-success text-white">
@@ -151,7 +151,7 @@
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
         <div class="toast-body">
-          Welcome to dev|bravo shell! Odds database loaded.
+          Welcome to dev|delta system! Dynamic database & calculator ready.
         </div>
       </div>
     </div>
