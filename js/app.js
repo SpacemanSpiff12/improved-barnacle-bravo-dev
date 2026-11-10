@@ -50,6 +50,7 @@ function calculateHypergeometric(N, K, n, k = 1) {
 document.addEventListener("DOMContentLoaded", () => {
   initializeAppData();
   setupEventListeners();
+  updateAuthUI();
 });
 
 // --- Fetch Data & sessionStorage Integration ---
@@ -191,3 +192,12 @@ function updateRecordCount(count) {
     badge.textContent = `${count} record${count === 1 ? '' : 's'}`;
   }
 }
+
+// Admin Reset DB Button
+  const resetBtn = document.getElementById("reset-db-btn");
+  if (resetBtn) {
+    resetBtn.addEventListener("click", () => {
+      sessionStorage.removeItem("ygo_cards");
+      window.location.reload();
+    });
+  }
