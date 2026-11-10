@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Ash Blossom & Joyous Spring",
+    "category": "handtrap",
+    "copies": 3,
+    "description": "The quintessential hand trap to negate searches, sends, and specials from deck.",
+    "tags": ["Monster", "Fire", "Handtrap"]
+  },
+  {
+    "id": 2,
+    "title": "Snake-Eye Ash",
+    "category": "starter",
+    "copies": 3,
+    "description": "Core 1-card combo starter for Fire strategies.",
+    "tags": ["Monster", "Fire", "Starter"]
+  },
+  {
+    "id": 3,
+    "title": "Nibiru, the Primal Being",
+    "category": "boardwipe",
+    "copies": 1,
+    "description": "Handtrap designed to punish over extension rather than trading one for one.",
+    "tags": ["Hand Trap", "Light", "Rock"]
+  }
+]
