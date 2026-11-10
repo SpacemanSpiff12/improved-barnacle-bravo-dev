@@ -109,9 +109,9 @@
     </section>
 
     <!-- Interactive Calculator & Dynamic Card Database Section -->
-    <section class="row g-4 mb-4">
+    <div class="row g-4 mb-4">
       <!-- Dynamic Odds Calculator Card -->
-      <div class="col-lg-5">
+      <div class="col-lg-5 col-md-12">
         <div class="card h-100 shadow-sm border-warning">
           <div class="card-header bg-warning text-dark fw-bold">
             <i class="bi bi-calculator me-2"></i>Custom Opening Hand Probability Calculator
@@ -141,20 +141,20 @@
       </div>
 
       <!-- Content Cards Container (Fetched via JSON & CRUD) -->
-      <div class="col-lg-7">
+      <div class="col-lg-7 col-md-12">
         <div class="card h-100 shadow-sm">
           <div class="card-header bg-secondary text-white fw-bold d-flex justify-content-between align-items-center">
             <span><i class="bi bi-card-checklist me-2"></i>Saved Starter / Hand Trap Database</span>
             <span class="badge bg-dark" id="record-count">0 records</span>
           </div>
-          <div class="card-body overflow-auto" style="max-height: 400px;">
-            <div id="content-container" class="row row-cols-1 g-3">
+          <div class="card-body overflow-auto" style="max-height: 450px;">
+            <div id="content-container" class="row row-cols-1 row-cols-md-2 g-3">
               <!-- Dynamically populated from JSON / sessionStorage -->
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
     <!-- Bootstrap Toast Notification -->
     <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
